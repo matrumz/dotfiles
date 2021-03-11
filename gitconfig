@@ -1,0 +1,19 @@
+[user]
+    name = matrumz
+    email = matrumz@hotmail.com
+[core]
+    editor = vim
+    autocrlf = false
+    # Don't consider trailing space change as a cause for merge conflicts
+    whitespace = -trailing-space
+[status]
+    # Recursively traverse untracked directories to display all contents
+    showUntrackedFiles = all
+[pull]
+    ff = only
+[push]
+    default = simple
+[merge]
+    ff = only
+[grep]
+    extendedRegexp = true
