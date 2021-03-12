@@ -1,0 +1,11 @@
+# Navigation
+alias v='cd $LOCALWKSPC'
+alias tfs='cd /data/tfs_workspaces/$(whoami)/'
+
+# Building
+alias remake='rebuild_code'
+alias genmake='genmak'
+alias e='cat $LOCALWKSPC/errorlist'
+
+# Scripts
+alias ggctr-genxcf="/opt/tyler/ggctr/scripts/generateXCFs"
