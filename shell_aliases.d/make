@@ -1,4 +1,3 @@
 alias m='make'
 alias cleanmake="make clean && make"
-alias cm='cmake'
 alias clean='make clean'
