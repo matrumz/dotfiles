@@ -27,3 +27,4 @@
     stash-all = stash push --include-untracked
     status-unpushed = log --branches --not --remotes
     tree = log --graph --oneline --all --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
+    localtree = log --graph --oneline --branches --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
