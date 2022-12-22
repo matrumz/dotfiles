@@ -35,6 +35,7 @@
     ls-tracked = "ls-files --exclude-from=.gitignore"
     ls-unstaged = ls-files --modified --others --exclude-standard
     ls-untracked = "ls-files --exclude-from=.gitignore --others"
+    pushup = "!f() { git push --set-upstream $1 $(git rev-parse --abbrev-ref HEAD); }; f"
     s = status
     save-rebase = !git tag $(echo rebase-restore/$(git rev-parse --abbrev-ref HEAD)/$(date --utc \"+%Y%m%dT%H%M%SZ\"))
     squash = rebase -i
