@@ -27,7 +27,9 @@
     fpwl = push --force --force-with-lease
     ignore = "!f() { echo \"$1\" >> .gitignore; }; f"
     irebase = rebase --interactive
-    localtree = log --graph --oneline --branches --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
+    leaves = log --graph --oneline --all --decorate=short --simplify-by-decoration
+    localleaves = log --graph --oneline --branches --decorate=short --simplify-by-decoration
+    localtree = log --graph --oneline --branches --decorate=short --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
     ls-staged = diff --staged --diff-filter=d --name-only
     ls-tracked = "ls-files --exclude-from=.gitignore"
     ls-unstaged = ls-files --modified --others --exclude-standard
@@ -39,4 +41,4 @@
     stash-staged = stash push --include-untracked -- (git ls-staged)
     stash-unstaged = stash push --keep-index --include-untracked -- (git ls-unstaged)
     status-unpushed = log --branches --not --remotes
-    tree = log --graph --oneline --all --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
+    tree = log --graph --oneline --all --decorate=short --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
