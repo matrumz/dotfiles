@@ -22,6 +22,7 @@
 [alias]
     # tweak this in the future such that it can intelligently abort anything
     abort = rebase --abort
+    cmain = "!f() { git fetch origin main && git checkout origin/main ;}; f"
     conflicts = diff --name-only --diff-filter=U
     cp = cherry-pick
     fixup = commit --fixup
@@ -36,6 +37,7 @@
     ls-unstaged = ls-files --modified --others --exclude-standard
     ls-untracked = "ls-files --exclude-from=.gitignore --others"
     pushup = "!f() { git push --set-upstream $1 $(git rev-parse --abbrev-ref HEAD); }; f"
+    rmain = "!f() { git fetch origin main && git rebase -i origin/main ;}; f"
     s = status
     save-rebase = !git tag $(echo rebase-restore/$(git rev-parse --abbrev-ref HEAD)/$(date --utc \"+%Y%m%dT%H%M%SZ\"))
     squash = rebase -i
