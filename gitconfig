@@ -41,6 +41,7 @@
     ls-unstaged = ls-files --modified --others --exclude-standard
     ls-untracked = "ls-files --exclude-from=.gitignore --others"
     pushup = "!f() { git push --set-upstream ${1:-origin} $(git rev-parse --abbrev-ref HEAD); }; f"
+    reword = "!f() { git commit --fixup=reword:$1 ;}; f"
     rmain = "!f() { git fetch origin main && git rebase -i origin/main ;}; f"
     s = status
     save-rebase = !git tag $(echo rebase-restore/$(git rev-parse --abbrev-ref HEAD)/$(date --utc \"+%Y%m%dT%H%M%SZ\"))
