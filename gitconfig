@@ -23,11 +23,14 @@
     # tweak this in the future such that it can intelligently abort anything
     abort = rebase --abort
     amend = "!f() { git commit --fixup=amend:$1 ;}; f"
+    bremote = "!f() { git fetch origin \"$1\" && git checkout -b \"$2\" FETCH_HEAD ;}; f"
     c = checkout
     cat = "!git show \"$1:$2\" #"
     cb = checkout -b
+    cmain = cremote main
     conflicts = diff --name-only --diff-filter=U
     cp = cherry-pick
+    cremote = "!f() { git fetch origin \"$1\" && git checkout FETCH_HEAD ;}; f"
     default-branch = "!f() { git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@ ; /^[[:space:]]*$/d ; s/^\n//' ;}; f"
     fixup = commit -e --fixup
     fpwl = push --force --force-with-lease
@@ -43,7 +46,8 @@
     ls-untracked = "ls-files --exclude-from=.gitignore --others"
     pushup = "!f() { git push --set-upstream ${1:-origin} $(git rev-parse --abbrev-ref HEAD); }; f"
     reword = "!f() { git commit --fixup=reword:$1 ;}; f"
-    rmain = "!f() { git fetch origin main && git rebase -i origin/main ;}; f"
+    rmain = rremote main
+    rremote = "!f() { git fetch origin \"$1\" && git rebase -i --autosquash FETCH_HEAD ;}; f"
     s = status
     save-rebase = !git tag $(echo rebase-restore/$(git rev-parse --abbrev-ref HEAD)/$(date --utc \"+%Y%m%dT%H%M%SZ\"))
     squash = rebase -i
