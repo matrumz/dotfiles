@@ -1,3 +1,0 @@
-alias m='make'
-alias cleanmake="make clean && make"
-alias clean='make clean'

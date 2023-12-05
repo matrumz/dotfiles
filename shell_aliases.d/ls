@@ -1,6 +1,0 @@
-# Colorize output
-alias ls='ls --color=auto'
-# Long list
-alias ll='ls -al'
-# List hidden files
-alias l.='ls -d .* --color=auto'
