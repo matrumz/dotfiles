@@ -45,6 +45,7 @@
     ls-tracked = "ls-files --exclude-from=.gitignore"
     ls-unstaged = ls-files --modified --others --exclude-standard
     ls-untracked = "ls-files --exclude-from=.gitignore --others"
+    myfiles = "log --author="(matrumz)|(.*Rumsey.*)" --diff-filter=A --no-commit-id --name-only"
     pushup = "!f() { git push --set-upstream ${1:-origin} $(git rev-parse --abbrev-ref HEAD); }; f"
     reword = "!f() { git commit --fixup=reword:$1 ;}; f"
     rmain = rremote main
