@@ -23,8 +23,9 @@
     # tweak this in the future such that it can intelligently abort anything
     abort = rebase --abort
     amend = "!f() { git commit --fixup=amend:$1 ;}; f"
+    c = checkout
     cat = "!git show \"$1:$2\" #"
-    cmain = "!f() { git fetch origin main && git checkout origin/main ;}; f"
+    cb = checkout -b
     conflicts = diff --name-only --diff-filter=U
     cp = cherry-pick
     default-branch = "!f() { git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@ ; /^[[:space:]]*$/d ; s/^\n//' ;}; f"
