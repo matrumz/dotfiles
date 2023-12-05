@@ -1,61 +1,61 @@
 [user]
-    name = matrumz
-    email = matrumz@hotmail.com
+	name = matrumz
+	email = matrumz@hotmail.com
 [core]
-    editor = vim
-    autocrlf = false
-    # Don't consider trailing space change as a cause for merge conflicts
-    whitespace = -trailing-space
+	editor = vim
+	autocrlf = false
+	# Don't consider trailing space change as a cause for merge conflicts
+	whitespace = -trailing-space
 [status]
-    # Recursively traverse untracked directories to display all contents
-    showUntrackedFiles = all
+	# Recursively traverse untracked directories to display all contents
+	showUntrackedFiles = all
 [pull]
-    ff = only
+	ff = only
 [push]
-    default = simple
+	default = simple
 [merge]
-    ff = only
+	ff = only
 [grep]
-    extendedRegexp = true
+	extendedRegexp = true
 [advice]
-    detachedHead = false
+	detachedHead = false
 [alias]
-    # tweak this in the future such that it can intelligently abort anything
-    abort = rebase --abort
-    amend = "!f() { git commit --fixup=amend:$1 ;}; f"
-    bremote = "!f() { git fetch origin \"$1\" && git checkout -b \"$2\" FETCH_HEAD ;}; f"
-    c = checkout
-    cat = "!git show \"$1:$2\" #"
-    cb = checkout -b
-    cmain = cremote main
-    conflicts = diff --name-only --diff-filter=U
-    cp = cherry-pick
-    cremote = "!f() { git fetch origin \"$1\" && git checkout FETCH_HEAD ;}; f"
-    default-branch = "!f() { git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@ ; /^[[:space:]]*$/d ; s/^\n//' ;}; f"
-    fetchpattern = "!f() { git fetch origin \"refs/heads/$1:refs/remotes/origin/$1\" ;}; f"
-    fixup = commit -e --fixup
-    fpwl = push --force --force-with-lease
-    ignore = "!f() { echo \"$1\" >> .gitignore; }; f"
-    irebase = rebase --interactive
-    leaves = log --graph --oneline --all --decorate=short --simplify-by-decoration --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
-    ll = log --oneline --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
-    localleaves = log --graph --oneline --branches --decorate=short --simplify-by-decoration --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
-    localtree = log --graph --oneline --branches --decorate=short --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
-    ls-staged = diff --staged --diff-filter=d --name-only
-    ls-tracked = "ls-files --exclude-from=.gitignore"
-    ls-unstaged = ls-files --modified --others --exclude-standard
-    ls-untracked = "ls-files --exclude-from=.gitignore --others"
-    myfiles = "log --author="(matrumz)|(.*Rumsey.*)" --diff-filter=A --no-commit-id --name-only"
-    pushup = "!f() { git push --set-upstream ${1:-origin} $(git rev-parse --abbrev-ref HEAD); }; f"
-    rc = rebase --continue
-    reword = "!f() { git commit --fixup=reword:$1 ;}; f"
-    rmain = rremote main
-    rremote = "!f() { git fetch origin \"$1\" && git rebase -i --autosquash FETCH_HEAD ;}; f"
-    s = status
-    save-rebase = !git tag $(echo rebase-restore/$(git rev-parse --abbrev-ref HEAD)/$(date --utc \"+%Y%m%dT%H%M%SZ\"))
-    squash = rebase -i
-    stash-all = stash push --include-untracked
-    stash-staged = stash push --include-untracked -- (git ls-staged)
-    stash-unstaged = stash push --keep-index --include-untracked -- (git ls-unstaged)
-    status-unpushed = log --branches --not --remotes
-    tree = log --graph --oneline --all --decorate=short --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
+	# tweak this in the future such that it can intelligently abort anything
+	abort = rebase --abort
+	amend = "!f() { git commit --fixup=amend:$1 ;}; f"
+	bremote = "!f() { git fetch origin \"$1\" && git checkout -b \"$2\" FETCH_HEAD ;}; f"
+	c = checkout
+	cat = "!git show \"$1:$2\" #"
+	cb = checkout -b
+	cmain = cremote main
+	conflicts = diff --name-only --diff-filter=U
+	cp = cherry-pick
+	cremote = "!f() { git fetch origin \"$1\" && git checkout FETCH_HEAD ;}; f"
+	default-branch = "!f() { git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@ ; /^[[:space:]]*$/d ; s/^\n//' ;}; f"
+	fetchpattern = "!f() { git fetch origin \"refs/heads/$1:refs/remotes/origin/$1\" ;}; f"
+	fixup = commit -e --fixup
+	fpwl = push --force --force-with-lease
+	ignore = "!f() { echo \"$1\" >> .gitignore; }; f"
+	irebase = rebase --interactive
+	leaves = log --graph --oneline --all --decorate=short --simplify-by-decoration --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
+	ll = log --oneline --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
+	localleaves = log --graph --oneline --branches --decorate=short --simplify-by-decoration --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
+	localtree = log --graph --oneline --branches --decorate=short --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
+	ls-staged = diff --staged --diff-filter=d --name-only
+	ls-tracked = "ls-files --exclude-from=.gitignore"
+	ls-unstaged = ls-files --modified --others --exclude-standard
+	ls-untracked = "ls-files --exclude-from=.gitignore --others"
+	myfiles = "log --author="(matrumz)|(.*Rumsey.*)" --diff-filter=A --no-commit-id --name-only"
+	pushup = "!f() { git push --set-upstream ${1:-origin} $(git rev-parse --abbrev-ref HEAD); }; f"
+	rc = rebase --continue
+	reword = "!f() { git commit --fixup=reword:$1 ;}; f"
+	rmain = rremote main
+	rremote = "!f() { git fetch origin \"$1\" && git rebase -i --autosquash FETCH_HEAD ;}; f"
+	s = status
+	save-rebase = !git tag $(echo rebase-restore/$(git rev-parse --abbrev-ref HEAD)/$(date --utc \"+%Y%m%dT%H%M%SZ\"))
+	squash = rebase -i
+	stash-all = stash push --include-untracked
+	stash-staged = stash push --include-untracked -- (git ls-staged)
+	stash-unstaged = stash push --keep-index --include-untracked -- (git ls-unstaged)
+	status-unpushed = log --branches --not --remotes
+	tree = log --graph --oneline --all --decorate=short --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
