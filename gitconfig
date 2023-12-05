@@ -47,6 +47,7 @@
     ls-untracked = "ls-files --exclude-from=.gitignore --others"
     myfiles = "log --author="(matrumz)|(.*Rumsey.*)" --diff-filter=A --no-commit-id --name-only"
     pushup = "!f() { git push --set-upstream ${1:-origin} $(git rev-parse --abbrev-ref HEAD); }; f"
+    rc = rebase --continue
     reword = "!f() { git commit --fixup=reword:$1 ;}; f"
     rmain = rremote main
     rremote = "!f() { git fetch origin \"$1\" && git rebase -i --autosquash FETCH_HEAD ;}; f"
