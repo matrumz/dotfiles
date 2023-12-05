@@ -33,9 +33,9 @@
     fpwl = push --force --force-with-lease
     ignore = "!f() { echo \"$1\" >> .gitignore; }; f"
     irebase = rebase --interactive
-    leaves = log --graph --oneline --all --decorate=short --simplify-by-decoration
-    ll = log --oneline
-    localleaves = log --graph --oneline --branches --decorate=short --simplify-by-decoration
+    leaves = log --graph --oneline --all --decorate=short --simplify-by-decoration --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
+    ll = log --oneline --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
+    localleaves = log --graph --oneline --branches --decorate=short --simplify-by-decoration --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
     localtree = log --graph --oneline --branches --decorate=short --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
     ls-staged = diff --staged --diff-filter=d --name-only
     ls-tracked = "ls-files --exclude-from=.gitignore"
