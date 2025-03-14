@@ -25,6 +25,7 @@
 	abort = rebase --abort
 	amend = "!f() { git commit --fixup=amend:$1 ;}; f"
 	b = branch --sort=-committerdate
+	backup = reset --soft HEAD^
 	bremote = "!f() { git fetch origin \"$1\" && git checkout -b \"$2\" FETCH_HEAD ;}; f"
 	c = checkout
 	cat = "!git show \"$1:$2\" #"
