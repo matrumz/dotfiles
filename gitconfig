@@ -39,6 +39,7 @@
 	fetchpattern = "!f() { git fetch origin \"refs/heads/$1:refs/remotes/origin/$1\" ;}; f"
 	fixup = commit --edit --fixup
 	fpwl = push --force --force-with-lease
+	goback = checkout @{-1}
 	ignore = "!f() { echo \"$1\" >> .gitignore; }; f"
 	irebase = rebase --interactive
 	leaves = log --graph --oneline --all --decorate=short --simplify-by-decoration --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
