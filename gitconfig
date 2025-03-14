@@ -56,6 +56,7 @@
 	rc = rebase --continue
 	reword = "!f() { git commit --fixup=reword:$1 ;}; f"
 	rmain = rremote main
+	root = rev-parse --show-toplevel
 	rremote = "!f() { git fetch origin \"$1\" && git rebase -i --autosquash FETCH_HEAD ;}; f"
 	s = status
 	save-rebase = !git tag $(echo rebase-restore/$(git rev-parse --abbrev-ref HEAD)/$(date --utc \"+%Y%m%dT%H%M%SZ\"))
