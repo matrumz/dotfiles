@@ -7,6 +7,8 @@
 	# Don't consider trailing space change as a cause for merge conflicts
 	whitespace = -trailing-space
 	sshCommand = ssh -i ~/.ssh/github -F /dev/null
+[init]
+	defaultBranch = main
 [status]
 	# Recursively traverse untracked directories to display all contents
 	showUntrackedFiles = all
