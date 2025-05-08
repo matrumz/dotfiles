@@ -69,5 +69,10 @@
 	status-unpushed = log --branches --not --remotes
 	status-unpushed-leaves = log --branches --not --remotes --simplify-by-decoration --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
 	tree = log --graph --oneline --all --decorate=short --pretty=format:'%C(auto)%h -%C(auto)%d %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [include]
 	path = ~/.override.gitconfig
