@@ -62,7 +62,7 @@
 	rremote = "!f() { git fetch origin \"$1\" && git rebase -i --autosquash FETCH_HEAD ;}; f"
 	s = status
 	save-rebase = !git tag $(echo rebase-restore/$(git rev-parse --abbrev-ref HEAD)/$(date --utc \"+%Y%m%dT%H%M%SZ\"))
-	squash = rebase -i
+	squash = commit --squash
 	stash-all = stash push --include-untracked
 	stash-staged = stash push --include-untracked -- (git ls-staged)
 	stash-unstaged = stash push --keep-index --include-untracked -- (git ls-unstaged)
