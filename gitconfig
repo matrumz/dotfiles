@@ -53,6 +53,7 @@
 	ls-unstaged = ls-files --modified --others --exclude-standard
 	ls-untracked = "ls-files --exclude-from=.gitignore --others"
 	myfiles = "log --author="(matrumz)|(.*Rumsey.*)" --diff-filter=A --no-commit-id --name-only"
+	p = push
 	pu = pushup
 	pushup = "!f() { git push --set-upstream ${1:-origin} $(git rev-parse --abbrev-ref HEAD); }; f"
 	rc = rebase --continue
