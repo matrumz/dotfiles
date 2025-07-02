@@ -28,6 +28,7 @@
 	amend = "!f() { git commit --fixup=amend:$1 ;}; f"
 	b = branch --sort=-committerdate
 	backup = reset --soft HEAD^
+	branches-containing-file = "!f() { git branch --all --contains $(git log --all --pretty=format:%H -- \"$1\" | tail -1) ;}; f"
 	bremote = "!f() { git fetch origin \"$1\" && git checkout -b \"$2\" FETCH_HEAD ;}; f"
 	c = checkout
 	cat = "!git show \"$1:$2\" #"
