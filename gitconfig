@@ -6,7 +6,7 @@
 	autocrlf = false
 	# Don't consider trailing space change as a cause for merge conflicts
 	whitespace = -trailing-space
-	sshCommand = ssh -i ~/.ssh/github -F /dev/null
+	sshCommand = ssh -i ~/.ssh/git -F /dev/null
 [init]
 	defaultBranch = main
 [status]
