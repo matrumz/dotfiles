@@ -25,7 +25,7 @@
 [alias]
 	# tweak this in the future such that it can intelligently abort anything
 	abort = rebase --abort
-	amend = "!f() { git commit --fixup=amend:$1 ;}; f"
+	amend = "!f() { if [ -z \"$1\" ]; then git commit --amend; else git commit --fixup=amend:$1; fi; }; f" # Creates a fixup=amend commit for the specified commit hash, or amends the last commit if no hash is provided
 	b = branch --sort=-committerdate
 	backup = reset --soft HEAD^
 	branches-containing-file = "!f() { git branch --all --contains $(git log --all --pretty=format:%H -- \"$1\" | tail -1) ;}; f"
