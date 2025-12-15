@@ -38,7 +38,9 @@
 	conflicts = diff --name-only --diff-filter=U
 	cp = cherry-pick
 	cremote = "!f() { git fetch origin \"$1\" && git checkout FETCH_HEAD ;}; f"
+	dcb = delete-current-branch
 	default-branch = "!f() { git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@ ; /^[[:space:]]*$/d ; s/^\n//' ;}; f"
+	delete-current-branch = "!f() { current_branch=$(git rev-parse --abbrev-ref HEAD) && git checkout --detach HEAD && git branch -D \"$current_branch\" ;}; f"
 	f = fetch
 	fetchpattern = "!f() { git fetch origin \"refs/heads/$1:refs/remotes/origin/$1\" ;}; f"
 	fixup = commit --edit --fixup
