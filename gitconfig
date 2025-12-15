@@ -28,6 +28,7 @@
 	amend = "!f() { if [ -z \"$1\" ]; then git commit --amend; else git commit --fixup=amend:$1; fi; }; f" # Creates a fixup=amend commit for the specified commit hash, or amends the last commit if no hash is provided
 	b = branch --sort=-committerdate
 	backup = reset --soft HEAD^
+	branches-by-author = for-each-ref --format='%(authorname)%(authoremail)%09%(refname:short)' refs/heads refs/remotes
 	branches-containing-file = "!f() { git branch --all --contains $(git log --all --pretty=format:%H -- \"$1\" | tail -1) ;}; f"
 	bremote = "!f() { git fetch origin \"$1\" && git checkout -b \"$2\" FETCH_HEAD ;}; f"
 	c = checkout
