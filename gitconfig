@@ -38,6 +38,7 @@
 	cmain = cremote main
 	conflicts = diff --name-only --diff-filter=U
 	cp = cherry-pick
+	cpnc = cherry-pick --no-commit
 	cremote = "!f() { git fetch origin \"$1\" && git checkout FETCH_HEAD ;}; f"
 	dcb = delete-current-branch
 	default-branch = "!f() { git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@ ; /^[[:space:]]*$/d ; s/^\n//' ;}; f"
