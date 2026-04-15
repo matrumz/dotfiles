@@ -34,6 +34,7 @@
 	c = checkout
 	cat = "!git show \"$1:$2\" #"
 	cb = checkout -b
+	cd = checkout --detach
 	cmain = cremote main
 	conflicts = diff --name-only --diff-filter=U
 	cp = cherry-pick
