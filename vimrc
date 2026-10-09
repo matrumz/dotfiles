@@ -10,6 +10,8 @@ set ruler " line/character position display
 set number
 syntax on
 set showmatch " shows matching brackets
+set listchars=tab:>-,trail:·,space:·,eol:$
+set list
 
 " Navigation
 "" Return to last position when reopening file
