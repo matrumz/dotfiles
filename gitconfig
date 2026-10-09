@@ -58,6 +58,7 @@
 	ls-unstaged = ls-files --modified --others --exclude-standard
 	ls-untracked = "ls-files --exclude-from=.gitignore --others"
 	myfiles = "!f() { git log --author $(git config user.email) --diff-filter=A --no-commit-id --name-only ;}; f"
+	mylogs = ll --author='mathew.rumsey' --author='matrumz'
 	p = push
 	pu = pushup
 	pushup = "!f() { git push --set-upstream ${1:-origin} $(git rev-parse --abbrev-ref HEAD); }; f"
