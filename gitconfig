@@ -23,6 +23,7 @@
 [advice]
 	detachedHead = false
 [alias]
+	a = absorb
 	# tweak this in the future such that it can intelligently abort anything
 	abort = rebase --abort
 	amend = "!f() { if [ -z \"$1\" ]; then git commit --amend; else git commit --fixup=amend:$1; fi; }; f" # Creates a fixup=amend commit for the specified commit hash, or amends the last commit if no hash is provided
