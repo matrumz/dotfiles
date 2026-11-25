@@ -25,6 +25,7 @@
 [alias]
 	# tweak this in the future such that it can intelligently abort anything
 	abort = rebase --abort
+	absorb = !/usr/lib/git-core/git-absorb
 	amend = "!f() { if [ -z \"$1\" ]; then git commit --amend; else git commit --fixup=amend:$1; fi; }; f" # Creates a fixup=amend commit for the specified commit hash, or amends the last commit if no hash is provided
 	b = branch --sort=-committerdate
 	branches-by-author = for-each-ref --format='%(authorname)%(authoremail)%09%(refname:short)' refs/heads refs/remotes
