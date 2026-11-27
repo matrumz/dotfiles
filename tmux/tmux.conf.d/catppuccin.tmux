@@ -1,0 +1,1 @@
+/home/matrumz/.config/tmux/catppuccin.tmux
